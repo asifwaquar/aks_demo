@@ -45,10 +45,10 @@ stages:
           backendType: 'azurerm'
           backendServiceArm: 'terraform-aks-azurerm-svc-con'
           ensureBackend: true
-          backendAzureRmResourceGroupName: 'terraform-storage-rg'
+          backendAzureRmResourceGroupName: 'terraform-storage-test-rg'
           backendAzureRmResourceGroupLocation: 'southeastasia'
-          backendAzureRmStorageAccountName: 'terraformstateakscluster'
-          backendAzureRmContainerName: 'tfstatefiles'
+          backendAzureRmStorageAccountName: 'terraformstateakstestcluster'
+          backendAzureRmContainerName: 'tfstatetestfiles'
           backendAzureRmKey: 'aks-base.tfstate'
           allowTelemetryCollection: false
       - task: TerraformCLI@0
@@ -89,9 +89,9 @@ stages:
                 workingDirectory: '$(Pipeline.Workspace)/infrastructure-out'
                 backendType: 'azurerm'
                 backendServiceArm: 'terraform-aks-azurerm-svc-con'
-                backendAzureRmResourceGroupName: 'terraform-storage-rg'
-                backendAzureRmStorageAccountName: 'terraformstateakscluster'
-                backendAzureRmContainerName: 'tfstatefiles'
+                backendAzureRmResourceGroupName: 'terraform-storage-test-rg'
+                backendAzureRmStorageAccountName: 'terraformstateakstestcluster'
+                backendAzureRmContainerName: 'tfstatetestfiles'
                 backendAzureRmKey: 'aks-$(DEV_ENVIRONMENT).tfstate'
                 allowTelemetryCollection: false
             - task: TerraformCLI@0
