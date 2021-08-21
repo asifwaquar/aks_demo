@@ -45,7 +45,7 @@ stages:
           backendType: 'azurerm'
           backendServiceArm: 'terraform-azurerm-svc-con'
           ensureBackend: true
-          backendAzureRmResourceGroupName: 'terraform-storage-test-rg'
+          backendAzureRmResourceGroupName: 'terraform-stg-test-rg'
           backendAzureRmResourceGroupLocation: 'southeastasia'
           backendAzureRmStorageAccountName: 'terraformstateakstestcluster'
           backendAzureRmContainerName: 'tfstatetestfiles'
@@ -89,7 +89,7 @@ stages:
                 workingDirectory: '$(Pipeline.Workspace)/infrastructure-out'
                 backendType: 'azurerm'
                 backendServiceArm: 'terraform-azurerm-svc-con'
-                backendAzureRmResourceGroupName: 'terraform-storage-test-rg'
+                backendAzureRmResourceGroupName: 'terraform-stg-test-rg'
                 backendAzureRmStorageAccountName: 'terraformstateakstestcluster'
                 backendAzureRmContainerName: 'tfstatetestfiles'
                 backendAzureRmKey: 'aks-$(DEV_ENVIRONMENT).tfstate'
