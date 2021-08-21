@@ -14,7 +14,7 @@ variable "location" {
 variable "resource_group_name" {
   type = string
   description = "This variable defines the Resource Group"
-  default = "terraform-aks"
+  default = "terraform-test-aks"
 }
 
 # Azure AKS Environment Name
@@ -38,7 +38,7 @@ variable "ssh_public_key" {
 variable "acr_name" {
   type = string
   description = "ACR name"
-  default = "terraformacr"
+  default = "terraformtestacr"
 }
 
 
