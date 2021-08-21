@@ -98,24 +98,5 @@ stages:
                 command: 'destroy'
                 workingDirectory: '$(Pipeline.Workspace)/infrastructure-out'
                 environmentServiceName: 'terraform-azurerm-svc-con'
-                commandOptions: '-auto-approve'
-                allowTelemetryCollection: false
-                
-            - task: TerraformCLI@0
-              displayName: Terraform Plan
-              inputs:
-                command: 'plan'
-                workingDirectory: '$(Pipeline.Workspace)/infrastructure-out'
-                environmentServiceName: 'terraform-azurerm-svc-con'
-                commandOptions: '-destroy -out aks-$(DEV_ENVIRONMENT).destroy.tfplan'
-                allowTelemetryCollection: false
-
-            - task: TerraformCLI@0
-              displayName: Terraform Apply
-              inputs:
-                command: 'apply'
-                workingDirectory: '$(Pipeline.Workspace)/infrastructure-out'
-                environmentServiceName: 'terraform-azurerm-svc-con'
-                commandOptions: '-destroy -auto-approve aks-$(DEV_ENVIRONMENT).destroy.tfplan'
                 allowTelemetryCollection: false
                 
