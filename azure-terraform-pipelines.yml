@@ -47,7 +47,7 @@ stages:
           ensureBackend: true
           backendAzureRmResourceGroupName: 'terraform-stg-test-rg'
           backendAzureRmResourceGroupLocation: 'southeastasia'
-          backendAzureRmStorageAccountName: 'terraformstateakstestcluster'
+          backendAzureRmStorageAccountName: 'terraformakstestcluster'
           backendAzureRmContainerName: 'tfstatetestfiles'
           backendAzureRmKey: 'aks-base.tfstate'
           allowTelemetryCollection: false
@@ -90,7 +90,7 @@ stages:
                 backendType: 'azurerm'
                 backendServiceArm: 'terraform-azurerm-svc-con'
                 backendAzureRmResourceGroupName: 'terraform-stg-test-rg'
-                backendAzureRmStorageAccountName: 'terraformstateakstestcluster'
+                backendAzureRmStorageAccountName: 'terraformakstestcluster'
                 backendAzureRmContainerName: 'tfstatetestfiles'
                 backendAzureRmKey: 'aks-$(DEV_ENVIRONMENT).tfstate'
                 allowTelemetryCollection: false
