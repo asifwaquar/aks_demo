@@ -80,18 +80,6 @@ stages:
               name: sshkey
               inputs:
                 secureFile: 'aks-terraform-devops-ssh-key-ububtu.pub'
-            - task: TerraformCLI@0
-              displayName: Terraform Init
-              inputs:
-                command: 'init'
-                workingDirectory: '$(Pipeline.Workspace)/infrastructure-out'
-                backendType: 'azurerm'
-                backendServiceArm: 'terraform-azurerm-svc-con'
-                backendAzureRmResourceGroupName: 'terraform-stg-test-rg'
-                backendAzureRmStorageAccountName: 'terraformakstestcluster'
-                backendAzureRmContainerName: 'tfstatetestfiles'
-                backendAzureRmKey: 'aks-$(DEV_ENVIRONMENT).tfstate'
-                allowTelemetryCollection: false
         
             - task: TerraformCLI@0
               inputs:
