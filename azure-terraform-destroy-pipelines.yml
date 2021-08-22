@@ -93,12 +93,21 @@ stages:
                 backendAzureRmContainerName: 'tfstatetestfiles'
                 backendAzureRmKey: 'aks-$(DEV_ENVIRONMENT).tfstate'
                 allowTelemetryCollection: false
+
+            - task: TerraformCLI@0
+              displayName: 'Terraform Plan'
+              inputs:
+                command: 'plan'
+                workingDirectory: '$(Pipeline.Workspace)/infrastructure-out'
+                environmentServiceName: 'terraform-azurerm-svc-con'
+                commandOptions: '-var ssh_public_key=$(sshkey.secureFilePath) -var environment=$(DEV_ENVIRONMENT) -target="azurerm_resource_group.terraform-test-aks-$(DEV_ENVIRONMENT)" -target="azurerm_resource_group.terraform-stg-test-rg" -target="azuread_group.terraform-test-aks-$(DEV_ENVIRONMENT)-administrators" -out $(Pipeline.Workspace)/infrastructure-out/$(DEV_ENVIRONMENT)-$(Build.BuildId).out'
+                allowTelemetryCollection: false
             - task: TerraformCLI@0
               displayName: 'Terraform destroy'
               inputs:
                 command: 'destroy'
                 workingDirectory: '$(Pipeline.Workspace)/infrastructure-out'
                 environmentServiceName: 'terraform-azurerm-svc-con'
-                commandOptions: '-var ssh_public_key=$(sshkey.secureFilePath) -var environment=$(DEV_ENVIRONMENT) -target="azurerm_resource_group.terraform-test-aks-$(DEV_ENVIRONMENT)" -target="azurerm_resource_group.terraform-stg-test-rg" -target="azuread_group.terraform-test-aks-$(DEV_ENVIRONMENT)-administrators"'
+                commandOptions: '$(Pipeline.Workspace)/infrastructure-out/$(DEV_ENVIRONMENT)-$(Build.BuildId).out'
                 allowTelemetryCollection: false
                 
