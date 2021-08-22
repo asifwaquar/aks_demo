@@ -7,8 +7,8 @@ trigger:
 - master
 
 pool:
- # vmImage: ubuntu-latest
-   name: 'agentpool_v1'
+  vmImage: ubuntu-latest
+  # name: 'agentpool_v1'
   
 # Define Variables for Environments
 variables:
@@ -71,8 +71,8 @@ stages:
     - deployment: DestroyAKSClusters
       displayName: DestroyAKSClusters
       pool:
-        #vmImage: 'ubuntu-latest'
-        name: 'agentpool_v1'
+        vmImage: 'ubuntu-latest'
+        #name: 'agentpool_v1'
       environment: $(DEV_ENVIRONMENT)      
       strategy:
         runOnce:
