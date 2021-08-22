@@ -13,7 +13,7 @@ variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: '9397efac-0120-450d-8eab-0fbc9a97b5b4'
   imageRepository: 'reactandspringdatarestv1'
-  containerRegistry: 'terraformacr.azurecr.io'
+  containerRegistry: 'terraformtestacr.azurecr.io'
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'terraformacr16833a1a-auth'
