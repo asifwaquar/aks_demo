@@ -8,7 +8,7 @@ trigger:
 
 pool:
  # vmImage: ubuntu-latest
-   vmImage: agentpool_v1
+   name: 'agentpool_v1'
   
 # Define Variables for Environments
 variables:
