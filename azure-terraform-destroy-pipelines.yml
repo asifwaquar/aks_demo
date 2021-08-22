@@ -38,6 +38,7 @@ stages:
         displayName: Terraform Install
         inputs:
           terraformVersion: 'latest'
+          downloadUrl: 'https://releases.hashicorp.com/terraform/1.0.5/terraform_1.0.5_linux_amd64.zip'
       - task: TerraformCLI@0
         displayName: Terraform Init
         inputs:
