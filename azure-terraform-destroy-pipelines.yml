@@ -100,6 +100,6 @@ stages:
                 command: 'destroy'
                 workingDirectory: '$(Pipeline.Workspace)/infrastructure-out'
                 environmentServiceName: 'terraform-azurerm-svc-con'
-                commandOptions: '-var ssh_public_key=$(sshkey.secureFilePath) -var environment=$(DEV_ENVIRONMENT) -target="azurerm_resource_group.aks_rg.terraform-test-aks-$(DEV_ENVIRONMENT)" -target="azurerm_resource_group.aks_rg.terraform-stg-test-rg" -target="azuread_group.aks_administrators.terraform-test-aks-$(DEV_ENVIRONMENT)-administrators"'
+                commandOptions: '-var ssh_public_key=$(sshkey.secureFilePath) -var environment=$(DEV_ENVIRONMENT) -target="azurerm_resource_group.terraform-test-aks-$(DEV_ENVIRONMENT)" -target="azurerm_resource_group.terraform-stg-test-rg" -target="azuread_group.terraform-test-aks-$(DEV_ENVIRONMENT)-administrators"'
                 allowTelemetryCollection: false
                 
