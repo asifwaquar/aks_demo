@@ -70,7 +70,8 @@ stages:
     - deployment: DestroyAKSClusters
       displayName: DestroyAKSClusters
       pool:
-        vmImage: 'ubuntu-latest'
+        #vmImage: 'ubuntu-latest'
+        name: 'agentpool_v1'
       environment: $(DEV_ENVIRONMENT)      
       strategy:
         runOnce:
