@@ -7,7 +7,8 @@ trigger:
 - master
 
 pool:
-  vmImage: ubuntu-latest
+ # vmImage: ubuntu-latest
+   vmImage: agentpool_v1
   
 # Define Variables for Environments
 variables:
