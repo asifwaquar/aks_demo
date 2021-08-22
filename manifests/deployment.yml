@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: aksdemotest 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aksdemotest
+  template:
+    metadata:
+      labels:
+        app: aksdemotest 
+    spec:
+      containers:
+        - name: aksdemotest 
+          image: terraformtestacr.azurecr.io/aksdemotest
+          ports:
+          - containerPort: 8080
