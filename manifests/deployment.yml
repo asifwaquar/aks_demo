@@ -18,3 +18,10 @@ spec:
           image: terraformtestacr.azurecr.io/aksdemotest
           ports:
           - containerPort: 8080
+          resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "500Mi"
+            cpu: "200m"         
